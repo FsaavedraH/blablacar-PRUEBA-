@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Sign Up</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Asegúrate de que el formulario se renderiza aquí -->
+        
+        <label for="role">Select your role:</label>
+        <select name="role" id="role" required>
+            <option value="passenger">Passenger</option>
+            <option value="driver">Driver</option>
+        </select>
+        
+        <button type="submit">Sign Up</button>
+    </form>
+    
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>  <!-- Mostrar mensajes de error -->
+    {% endif %}
+{% endblock %}
+

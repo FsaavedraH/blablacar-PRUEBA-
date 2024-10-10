@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Viajes Pendientes</h1>
+
+{% if viajes %}
+    <ul>
+        {% for viaje in viajes %}
+            <li>
+                <p>Origen: {{ viaje.origen }}</p>
+                <p>Destino: {{ viaje.destino }}</p>
+                <p>Fecha: {{ viaje.fecha }}</p>
+                <p>Estado: {{ viaje.estado }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay viajes pendientes.</p>
+{% endif %}
+
+{% endblock %}

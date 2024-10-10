@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>CREAR VIAJE</h1>
+
+<p>Pasajero actual: {{ passenger_name }}</p>  <!-- Mostrar el nombre del pasajero -->
+
+<form action="{% url 'crear_viaje' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Renderizar el formulario -->
+    <button type="submit">Guardar</button>
+</form>
+
+{% endblock %}

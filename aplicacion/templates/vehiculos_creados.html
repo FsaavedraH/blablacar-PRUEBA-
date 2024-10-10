@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Vehículos creados</h1>
+<h2>Bienvenida(o): {{ user.username }}</h2>  <!-- Aquí se muestra el nombre del usuario logueado -->
+<ul>
+    {% for vehicle in vehicles %}
+    <li>
+        <p>{{ vehicle.marca }}</p>
+        <p>{{ vehicle.license_plate }}</p>
+    </li>
+    {% empty %}
+    <li>No hay vehículos creados.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
